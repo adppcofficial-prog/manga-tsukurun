@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'upload_screen.dart';
 import 'projects_screen.dart';
 import 'templates_screen.dart';
+import 'subconscious_manager_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -80,6 +81,13 @@ class HomeScreen extends StatelessWidget {
                     title: 'AIが自動で漫画を生成',
                     description: 'AIが台本を分析して漫画化',
                     color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  const SizedBox(height: 16),
+                  _FeatureCard(
+                    icon: Icons.psychology_alt,
+                    title: '潜在意識を整える管理ツール',
+                    description: '意図と習慣を記録して創作の集中力を高める',
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   const SizedBox(height: 16),
                   _FeatureCard(
@@ -163,6 +171,34 @@ class HomeScreen extends StatelessWidget {
                         foregroundColor: Theme.of(context).colorScheme.primary,
                         side: BorderSide(
                           color: Theme.of(context).colorScheme.primary,
+                          width: 2,
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const SubconsciousManagerScreen(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.psychology_alt),
+                      label: const Text(
+                        '潜在意識管理ツール',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: Theme.of(context).colorScheme.secondary,
+                        side: BorderSide(
+                          color: Theme.of(context).colorScheme.secondary,
                           width: 2,
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 16),
